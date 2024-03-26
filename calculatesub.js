@@ -33,6 +33,19 @@ function insert (a) {
     document.getElementById("output").innerHTML = print(list);
 }
 
+function insert_bracket () {
+    if (list.length == 0 || list[list.length-1] == '+' || list[list.length-1] == '/' || list[list.length-1] == 'x' || list[list.length-1] == '-' || list[list.length-1] == '(') {
+        list.push('(');
+        document.getElementById("output").innerHTML = print(list);
+    }
+
+    if (isnumber(list[list.length-1]) == 1 || list[list.length-1] == ')') {
+        list.push(')');
+        document.getElementById("output").innerHTML = print(list);
+    }
+
+}
+
 function del () {
     list.pop();
     document.getElementById("output").innerHTML = print(list);
@@ -152,12 +165,17 @@ function level5() {
 
 function level6() {
     var result = 0;
+    var op = 0;
 
     if (cal[0] == '(') {
-        var op = cal[0];
-        get();
-        result = level1();
-        get();
+        var check = [''];
+        while (!check.includes(')')) {
+            get();
+            result = level1();
+            check.push(cal[0]);
+            get();
+        }
+        
     } else {
         result = intiger();
     }
@@ -196,17 +214,6 @@ function intiger () {
                 temp *= 10;
             }
     
-            result += temp;
-        }
-    } else {
-        for (var i = 1; i <= cal.length-1; i++) {
-             var temp = 0;
-             temp = cal[i];
-
-            for (var j = 1; j < cal.length-i-1; j++) {
-                temp *= 10;
-            }
-
             result += temp;
         }
     }
