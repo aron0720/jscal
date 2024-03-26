@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="calculatesub.js"></script>
+    <meta charset = "EUC-KR"/>
+    <title>
+        민석이의 계산기
+    </title>
+</head>
+<body>
+    <h1 style="color:black">민석이의 계산기</h1>
+    <div class "row_0">
+        <div id="output" style="background-color: #eeeeee; border: #eeeeee 1px solid; padding: 15px;">
+        <p data-ke-size="size20"></p>
+        </div>
+    </div>    
+    <div class "row_1">
+        <button id = "row_1-1" onclick="initialization()">C</button>
+        <button id = "row_1-2">()</button>
+        <button id = "row_1-3" onclick="insert('%')">%</button>
+        <button id = "row_1-4" onclick="insert('/')">/</button>
+    </div>
+    <div class "row_2">
+        <button id = "row_2-1" onclick="insert(7)">7</button>
+        <button id = "row_2-2" onclick="insert(8)">8</button>
+        <button id = "row_2-3" onclick="insert(9)">9</button>
+        <button id = "row_2-4" onclick="insert('x')">X</button>
+    </div>
+    <div class "row_3">
+        <button id = "row_3-1" onclick="insert(4)">4</button>
+        <button id = "row_3-2" onclick="insert(5)">5</button>
+        <button id = "row_3-3" onclick="insert(6)">6</button>
+        <button id = "row_3-4" onclick="insert('-')">-</button>
+    </div>
+    <div class "row_4">
+        <button id = "row_4-1" onclick="insert(1)">1</button>
+        <button id = "row_4-2" onclick="insert(2)">2</button>
+        <button id = "row_4-3" onclick="insert(3)">3</button>
+        <button id = "row_4-4" onclick="insert('+')">+</button>
+    </div>
+    <div class "row_5">
+        <button id = "row_5-1" onclick="del()">del</button>
+        <button id = "row_5-2" onclick="insert(0)">0</button>
+        <button id = "row_5-3" onclick="insert('.')">.</button>
+        <button id = "row_5-4" onclick="calc()">=</button>
+    </div>
+
+</body>
+</html>
